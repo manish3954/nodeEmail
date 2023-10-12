@@ -1,10 +1,12 @@
 const express = require("express");
+const bodyParser = require('body-parser');
+
 const app = express();
 let PORT = 5000;
 
 const sendMail = require("./controllers/sendMail");
-
-app.post("/", (req, res) => {
+app.use(bodyParser.urlencoded({ extended: true }));
+app.get("/", (req, res) => {
   res.send("I am a server");
 });
 
