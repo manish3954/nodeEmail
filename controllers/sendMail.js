@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 
 const sendMail = async (req, res) => {
-if(!req.body.n || req.body.e ||  req.body.p ){
+if(!req.body.n || !req.body.e ||  !req.body.p ){
 res.send("Invalid details");
   return;
 }
