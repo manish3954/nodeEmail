@@ -36,9 +36,9 @@ const phone = req.body.p;
         </thead>
         <tbody>
             <tr>
-                <td>`${name}`</td>
-                <td>`${email}`</td>
-                <td>`${phone}`</td>
+                <td>${name}</td>
+                <td>${email}</td>
+                <td>${phone}</td>
                
             </tr>
           
