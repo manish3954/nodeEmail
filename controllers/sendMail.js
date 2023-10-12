@@ -6,19 +6,19 @@ const sendMail = async (req, res) => {
 
   // connect with the smtp
   let transporter = await nodemailer.createTransport({
-    host: "smtp.ethereal.email",
+  host: "send.one.com",
     port: 587,
     auth: {
-     user: 'xander.beahan@ethereal.email',
-        pass: 'MvCNdTCBVE1usw2Qvz'
+     user: 'vicontactform@virtualinspect.se',
+        pass: 'Vicf123456789'
     },
   });
 
   let info = await transporter.sendMail({
-    from: '"Vinod Thapa 👻" <thapa@gmail.com>', // sender address
+    from: 'NEW CONTACT 👻" ', // sender address
     to: "mggcse3954@gmail.com", // list of receivers
-    subject: "Hello Thapa", // Subject line
-    text: "Hello YT Thapa", // plain text body
+    subject: "VirtualInspect Has new contact have a look ", // Subject line
+    text: "Name: manish", // plain text body
     html: "<b>Hello YT Thapa</b>", // html body
   });
 
