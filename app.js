@@ -5,7 +5,9 @@ const app = express();
 let PORT = 5000;
 
 const sendMail = require("./controllers/sendMail");
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.get("/", (req, res) => {
   res.send("I am a server");
 });
