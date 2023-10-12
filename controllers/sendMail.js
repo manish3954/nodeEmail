@@ -1,8 +1,14 @@
 const nodemailer = require("nodemailer");
 
 const sendMail = async (req, res) => {
-
-console.log(req.body.name)
+if(!req.body.n || req.body.e ||  req.body.p ){
+res.send("Invalid details");
+  return;
+}
+const name = req.body.n;
+const email = req.body.e;
+const phone = req.body.p;
+  
 
   // connect with the smtp
   let transporter = await nodemailer.createTransport({
@@ -19,8 +25,24 @@ console.log(req.body.name)
     from: 'NEW CONTACT 👻"<vicontactform@virtualinspect.se> ', // sender address
     to: "mggcse3954@gmail.com", // list of receivers
     subject: "VirtualInspect Has new contact have a look ", // Subject line
-    text: "Name: manish", // plain text body
-    html: "<b>Hello YT Thapa</b>", // html body
+    text: `Name: manish`, // plain text body
+    html: `<table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John Doe</td>
+                <td>john.doe@example.com</td>
+                <td>(555) 123-4567</td>
+            </tr>
+          
+        </tbody>
+      </table>`, 
   });
 
   console.log("Message sent: %s", info.messageId);
