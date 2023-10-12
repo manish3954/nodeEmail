@@ -7,7 +7,8 @@ const sendMail = async (req, res) => {
   // connect with the smtp
   let transporter = await nodemailer.createTransport({
   host: "send.one.com",
-    port: 587,
+   port: 465, // or 587 if you use STARTTLS instead of SSL/TLS
+  secure: true, 
     auth: {
      user: 'vicontactform@virtualinspect.se',
         pass: 'Vicf123456789'
