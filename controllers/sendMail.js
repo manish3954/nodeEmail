@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 
 const sendMail = async (req, res) => {
-  console.log(process.env.USER)
+
 
 
   // connect with the smtp
@@ -16,7 +16,7 @@ const sendMail = async (req, res) => {
   });
 
   let info = await transporter.sendMail({
-    from: 'NEW CONTACT 👻" ', // sender address
+    from: 'NEW CONTACT 👻"<vicontactform@virtualinspect.se> ', // sender address
     to: "mggcse3954@gmail.com", // list of receivers
     subject: "VirtualInspect Has new contact have a look ", // Subject line
     text: "Name: manish", // plain text body
