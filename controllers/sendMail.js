@@ -2,7 +2,7 @@ const nodemailer = require("nodemailer");
 
 const sendMail = async (req, res) => {
 
-console.log(req)
+console.log(req.body)
 
   // connect with the smtp
   let transporter = await nodemailer.createTransport({
