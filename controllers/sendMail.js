@@ -36,9 +36,10 @@ const phone = req.body.p;
         </thead>
         <tbody>
             <tr>
-                <td>John Doe</td>
-                <td>john.doe@example.com</td>
-                <td>(555) 123-4567</td>
+                <td>`${name}`</td>
+                <td>`${email}`</td>
+                <td>`${phone}`</td>
+               
             </tr>
           
         </tbody>
