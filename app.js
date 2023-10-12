@@ -4,22 +4,13 @@ const bodyParser = require('body-parser');
 const app = express();
 let PORT = 5000;
 
-const enforceHttps = (req, res, next) => {
- console.log(req)
-  if (req.socket.encrypted) {
-    // If the request is already over HTTPS, proceed to the next middleware
-    next();
-  } else {
-    // If the request is over HTTP, redirect to the HTTPS version
-    res.send("Bad Request");
-  }
-};
+
 
 const sendMail = require("./controllers/sendMail");
 // app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(enforceHttps);
+
 
 
 app.get("/", (req, res) => {
