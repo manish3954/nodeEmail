@@ -4,11 +4,11 @@ let PORT = 5000;
 
 const sendMail = require("./controllers/sendMail");
 
-app.get("/", (req, res) => {
+app.post("/", (req, res) => {
   res.send("I am a server");
 });
 
-app.get("/mail", sendMail);
+app.post("/mail", sendMail);
 
 const start = async () => {
   try {
