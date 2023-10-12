@@ -5,8 +5,8 @@ const app = express();
 let PORT = 5000;
 
 const enforceHttps = (req, res, next) => {
-  console.log(req.secure, req.protocal)
-  if (req.secure) {
+ 
+  if (req.connection.encrypted) {
     // If the request is already over HTTPS, proceed to the next middleware
     next();
   } else {
