@@ -8,7 +8,11 @@ res.send("Invalid details");
 const name = req.body.n;
 const email = req.body.e;
 const phone = req.body.p;
-  
+  var maillist = [
+  'mggcse3954@gmail.com',
+  'info@virtualinspect.se',
+  'rebaz.amin@virtualways.se',
+];
 
   // connect with the smtp
   let transporter = await nodemailer.createTransport({
@@ -23,7 +27,7 @@ const phone = req.body.p;
 
   let info = await transporter.sendMail({
     from: 'NEW CONTACT 👻"<vicontactform@virtualinspect.se> ', // sender address
-    to: "mggcse3954@gmail.com", // list of receivers
+    to:maillist, // list of receivers
     subject: "VirtualInspect Has new contact have a look ", // Subject line
     text: `Name: manish`, // plain text body
     html: `<table>
