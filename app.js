@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
   res.send("I am a server");
 });
 app.use(function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', 'https://virtualinspect-website--test28-ummfyztl.web.app');
+  res.header('Access-Control-Allow-Origin', 'https://virtualinspect.se');
   res.header(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept'
